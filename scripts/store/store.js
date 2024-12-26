@@ -18,7 +18,7 @@ const productGrid = document.querySelector('.products-grid')
 fetchProducts().then(res => {
     products = res
     productTemp = res
-    res.filter(item => item.name.includes(searchParam)).map(item => {
+    res.filter(item => ((item.category.toLowerCase()).includes(searchParam.toLowerCase()) || (item.name.toLowerCase()).includes(searchParam.toLowerCase()) )).map(item => {
 
         productGrid.append(createProduct(item))
 

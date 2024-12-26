@@ -22,7 +22,18 @@
 .breadcrumb {
     margin-bottom: 30px;
     font-size: 14px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
 }
+
+
+
+
+
 
 .breadcrumb a {
     color: var(--text-color);
@@ -212,9 +223,13 @@ input {
         gap: 20px;
     }
     .product-gallery {
-        height: 400px;
+        height: 300px;
         display: flex;
         gap: 20px;
+    }
+
+    img {
+        object-fit: cover;
     }
 
     .product-page {
@@ -223,5 +238,16 @@ input {
         margin: 40px auto;
         padding: 0 20px;
         min-height: 85vh;
+    }
+
+
+    .add-to-cart {
+        flex-direction: column;
+        align-items: flex-start;
+
+    }
+
+    .add-to-cart > button {
+        padding: 10px;
     }
 }
