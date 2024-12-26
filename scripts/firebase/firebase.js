@@ -68,7 +68,7 @@ export async function register() {
             phoneNumber: phoneNumber,
         });
 
-        console.log("User registered and user data initialized:", user);
+       
         alert('Qeydiyyatdan uğurla keçdiniz, ana səhifəyə yönləndirilirsiniz!')
         setTimeout(() => {
             window.location.href = 'homepage.html'
@@ -119,7 +119,7 @@ export async function authChanged() {
                     console.log("No user document found.");
                 }
             } catch (error) {
-                console.error("Error fetching user data:", error.message);
+     
                 sessionStorage.removeItem('user')
                 document.querySelector('header button').classList.add('hidden')
             }
@@ -171,7 +171,9 @@ export async function addToCart(userId, product, quantityToAdd) {
             cart: currentCart
         });
 
-        console.log("Cart updated:", currentCart);
+        if (!window.location.href.includes('product')) {
+            showToast('Məhsul səbətə əlavə edildi')
+        }
     } catch (error) {
         console.error("Error adding item to cart:", error);
     }
@@ -241,11 +243,12 @@ export async function signIn(email, password) {
     try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         console.log("User signed in successfully:", userCredential.user);
-        alert("Giriş edildi, ana səhifəyə yönləndirilirsiniz!");
-        window.location.href = '/'
+        showToast('Giriş edildi, ana səhifəyə yönləndirilirsiniz!')
+        setTimeout(()=> {
+            window.location.href = '/'
+        }, 1000)
     } catch (error) {
-        console.error("Error during sign-in:", error.message);
-        alert(error.message);
+        alert('Email adresi və ya şifrə yanlışdır.')
     }
 }
 
@@ -273,7 +276,6 @@ export async function findProductById(productId) {
 export function logoutUser() {
     auth.signOut()
       .then(() => {
-        alert("You have been logged out.");
         document.querySelector('header button').classList.remove('hidden')
         showToast('Hesabdan çıxış edildi')
         window.location.href = "homepage.html";

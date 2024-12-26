@@ -176,9 +176,7 @@ button {
 }
 
 
-#wrapper {
-  min-height: 300px;
-}
+
 
 
 
@@ -196,7 +194,8 @@ button {
 }
 
 
-#wrapper {
+#wrapper, #wrapper2 {
+  min-height: 300px;
   width: 80%;
   margin: 0 auto;
   display: grid;
@@ -204,12 +203,37 @@ button {
   grid-template-columns: 1fr 2fr;
 }
 
-#wrapper2 {
+#categories {
   width: 80%;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
+  margin: 50px auto;
+
+  h2 {
+    margin-bottom: 30px;
+  }
 }
+
+.cat-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cat-list a {
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+  color: #000;
+  font-weight: bold;
+}
+
+.cat-list a:hover {
+  background-color: #000;
+  color: white;
+  cursor: pointer;
+}
+
+
 
 .container {
   gap: 20px;
@@ -564,7 +588,7 @@ button {
     }
   }
 
-  #wrapper {
+  #wrapper, #wrapper2 {
     grid-template-columns: 1fr !important;
     width: 80%;
     margin: 50px auto;

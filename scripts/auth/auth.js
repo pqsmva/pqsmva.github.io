@@ -29,7 +29,7 @@ document.querySelector(`#registerForm`).addEventListener('submit', e => {
 })
 document.querySelector(`#loginForm`).addEventListener('submit', e => {
     e.preventDefault()
-    signIn(loginForm.querySelector('#login-email').value, loginForm.querySelector('#login-password').value )
+    signIn(loginForm.querySelector('#login-email').value, loginForm.querySelector('#login-password').value ).then(r => console.log(r))
 })
 
 

@@ -68,6 +68,28 @@
         </div>
     </div>
 
+    <div id="categories">
+        <h2>Kateqoriyalar</h2>
+
+        <div class="cat-list">
+            
+        </div>
+    </div>
+
+    <div id="wrapper2" class="container">
+        <div class="info">
+            <h3>Yeni gələnlər</h3>
+
+            <p>Yeni məhsullarımızla tanış olun! Hər biri xüsusi dizayn və yüksək keyfiyyətlə hazırlanmış 
+            zərgərliklərimiz, həyatınızın ən qiymətli anlarına gözəllik qatacaq. Yeni kolleksiyamıza göz atın və fərdi üslubunuzu tamamlayın!</p>
+
+            <a href="store.html">Bütün məhsullara bax <span>➔</span> </a>
+        </div>
+        <div class="product-list">
+
+        </div>
+    </div>
+
 
     <div class="quick-view hidden">
         <div class="quick-view-modal">
@@ -105,11 +127,11 @@
 
     <section class="newsletter">
         <div class="container">
-            <h2>Stay in the Loop</h2>
-            <p>Subscribe to our newsletter for exclusive offers, new arrivals, and sparkling inspiration.</p>
+            <h2>Yeniliklərdən xəbərdar olun</h2>
+            <p>Bülletenimizə abunə olun, eksklüziv təkliflər, yeni məhsullar və parlaq ilham alın.</p>
             <form id="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
-                <button type="submit" class="btn">Subscribe</button>
+                <input type="email" placeholder="Email ünvanınızı daxil edin." required>
+                <button type="submit" class="btn">Abunə ol</button>
             </form>
         </div>
     </section>
@@ -129,61 +151,7 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script type="module" src="../scripts/homepage/home.js" ></script>
 
-    <script src="https://js.stripe.com/v3/"></script>
 
-
-    <script>
-                // Initialize Stripe with test publishable key
-                const stripe = Stripe("pk_test_51QaPZ0G33x5TBjQ73ZFVSJdvdjenNtHSdPW8EW6DmYw5ZhmMj063FIgnHLgWPq1oWzB4s114Wjt6rb0dps654Wmv00Wqx3tN6B"); // Replace with your test publishable key
-
-async function createTestPaymentIntent(amount) {
-    try {
-        // Replace this endpoint with your server's payment intent creation API
-        const response = await fetch("/create-payment-intent", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                amount: amount, // Amount in cents
-                currency: "usd", // Currency
-            }),
-        });
-
-        if (!response.ok) {
-            throw new Error("Failed to create payment intent.");
-        }
-
-        const { clientSecret } = await response.json();
-
-        // Confirm the payment using Stripe.js
-        const result = await stripe.confirmCardPayment(clientSecret, {
-            payment_method: {
-                card: {
-                    number: "4242424242424242", // Test card number
-                    exp_month: 12,            // Expiry month (e.g., December)
-                    exp_year: 2025,           // Expiry year
-                    cvc: "123",               // Card verification code
-                }, // CardElement is the Stripe card input field
-                billing_details: {
-                    name: "Test User",
-                },
-            },
-        });
-
-        if (result.error) {
-            console.error("Payment failed:", result.error.message);
-        } else if (result.paymentIntent.status === "succeeded") {
-            console.log("Payment succeeded!");
-        }
-    } catch (error) {
-        console.error("Error in payment process:", error.message);
-    }
-}
-
-
-createTestPaymentIntent(500).then(r => console.log(r))
-    </script>
 </body>
 
 </html>

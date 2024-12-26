@@ -93,7 +93,7 @@ button[type="submit"]:hover {
     text-decoration: none;
 }
 
-ia (max-width: 480px) {
+@media (max-width: 480px) {
     .container {
         padding: 20px;
     }
@@ -101,4 +101,41 @@ ia (max-width: 480px) {
     .form-container {
         padding: 30px;
     }
+}
+
+
+
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Toast notifications */
+.toast {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in-out 5s forwards;
+}
+
+.toast.success {
+    background-color: #4CAF50;
+}
+
+.toast.error {
+    background-color: #F44336;
+}
+
+.toast.warning {
+    background-color: #FF9800;
 }
