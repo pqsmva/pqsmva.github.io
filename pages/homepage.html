@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.17.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.17.2/firebase-firestore.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/home/swiper.css">
+    <link rel="stylesheet" href="../styles/home/home.css">
+    <link rel="stylesheet" href="../styles/common/header.css">
+    <link rel="stylesheet" href="../styles/common/product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Ana səhifə</title>
+
+
+
+
+</head>
+
+<body>
+    <header></header>
+    <section id="banner">
+        <div class="banner-text">
+            <h1>JEWEL.AZ-a xoş gəlmisiniz</h1>
+            <a href="store.html">Alışveriş-ə başla <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="container">
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="https://images5.alphacoders.com/107/1070518.jpg" alt="Slide 1" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://images.pexels.com/photos/265906/pexels-photo-265906.jpeg?cs=srgb&dl=pexels-pixabay-265906.jpg&fm=jpg"
+                            alt="Slide 2" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="https://wallpapercat.com/w/full/5/4/3/806809-3840x2160-desktop-4k-jewelry-wallpaper-image.jpg"
+                            alt="Slide 3" />
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+    <div id="wrapper" class="container">
+        <div class="info">
+            <h3>Yeni il Endirimləri</h3>
+
+            <p>Ulduz kimi sönən və birdən-birə bitən ilin ən populyar vaxtları üçün ən populyar məhsullarımızdan biri olan sizin üçün seçdiyimiz zinət əşyalarına yaxından baxın! Gözəl seçimlərə heyran qalacaqsınız.</p>
+
+            <a href="store.html">Bütün məhsullara bax <span>➔</span> </a>
+        </div>
+        <div class="product-list">
+
+        </div>
+    </div>
+
+
+    <div class="quick-view hidden">
+        <div class="quick-view-modal">
+
+            <div class="quick-view-content">
+                <div class="quick-view-thumbnail">
+                    <img src="https://www.klasier.com/wp-content/uploads/2024/11/IMG-20241109-WA0074.jpg" alt="">
+                </div>
+
+                <div class="quick-view-info">
+                    <div class="heading">
+                        <div></div>
+                        <button><i class="fa-solid fa-xmark"></i></button>
+                    </div>
+
+                    <div class="name">Product</div>
+
+                    <div class="price">
+                        <p>Qiymət:</p> <span>200 Azn</span>
+                    </div>
+                    <div class="quantity">
+                        <button>-</button>
+                        <input value="1" type="number">
+                        <button>+</button>
+                    </div>
+
+                    <button class="cart-btn"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                    <div class="category">Kateqoriya: <span>Üzüklər</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <section class="newsletter">
+        <div class="container">
+            <h2>Stay in the Loop</h2>
+            <p>Subscribe to our newsletter for exclusive offers, new arrivals, and sparkling inspiration.</p>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Enter your email" required>
+                <button type="submit" class="btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+
+
+
+    <footer class="footer">
+    </footer>
+
+
+
+    
+
+    <script type="module" src="../scripts/commons/loadCommon.js" ></script>
+    <script type="module" src="../scripts/firebase/firebase.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script type="module" src="../scripts/homepage/home.js" ></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+.quick-view {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .quick-view-modal {
+    padding: 20px;
+    max-width: 95%;
+    width: 768px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .quick-view-modal .heading {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .quick-view-modal .heading button {
+    background-color: transparent;
+    font-size: 22px;
+  }
+  
+  .quick-view-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+  
+  .quick-view-thumbnail {
+    height: 300px;
+  }
+  
+  .quick-view-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  
+  .quick-view-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  input::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  
+  
+  .quick-view .name {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .price {
+    font-size: 18px;
+  }
+  
+  .price span {
+    font-weight: bold
+  }
+  
+  .quick-view .quantity {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid black;
+    justify-content: space-between;
+    width: 100px;
+  }
+  
+  .quick-view .quantity input {
+    width: 40px;
+    border: 0;
+    text-align: center;
+  }
+  
+  .quick-view .quantity button {
+    height: 100%;
+    width: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  
+  .quick-view .cart-btn {
+    background-color: black;
+    color: white;
+    padding: 10px;
+  }
+  

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../styles/product/product.css">
+    <link rel="stylesheet" href="../styles/common/header.css">
+</head>
+
+<body>
+
+
+    <header></header>
+    <main class="product-page">
+        <div class="breadcrumb">
+            <a href="homepage.html"><i class="fa-solid fa-house"></i> Ana səhifə</a> &gt;
+            <a href="store.html"><i class="fa-solid fa-store"></i> Mağaza</a> &gt;
+            <span></span>
+        </div>
+
+        <div class="product-container">
+            <div class="product-gallery">
+                <div class="discount-badge"></div>
+
+            </div>
+
+            <div class="product-info">
+                <h1></h1>
+                <div class="price">
+                    <span class="original-price"></span>
+                    <span class="discounted-price"></span>
+                    <div class="currency">Azn</div>
+                </div>
+
+                <div class="stock-status">
+                    <p>Tələsin! Stokda cəmi <span class="stock-count"></span> ədəd qaldı.</p>
+                </div>
+
+                <!-- <div class="product-options">
+                    <h3>Renk Seçimi:</h3>
+                    <div class="option-buttons">
+                        <button class="active">Altın Kaplama</button>
+                        <button>Gümüş Kaplama</button>
+                    </div>
+                </div> -->
+
+                <div class="add-to-cart">
+                    <div class="quantity">
+                        <button class="minus">-</button>
+                        <input class="cart-count" type="number" value="1" min="1">
+                        <button class="plus">+</button>
+                    </div>
+                    <button class="add-to-cart-btn">
+                        <i class="fas fa-shopping-bag"></i>
+                        Səbətə əlavə et
+                    </button>
+                    <!-- <button class="wishlist-btn">
+                        <i class="far fa-heart"></i>
+                    </button> -->
+                </div>
+
+                <div class="category">
+                    <p></p>
+                </div>
+
+                <div class="social-share">
+                    <span>Paylaş:</span>
+                    <a href="#"><i class="fab fa-facebook-f"> </i>Facebook</a>
+                    <a href="#"><i class="fab fa-pinterest-p"> </i>Pinterest</a>
+                    <a href="#"><i class="fab fa-telegram"> </i>Telegram</a>
+                    <a href="#"><i class="fab fa-whatsapp"> </i>Whatsapp</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+
+
+    <script type="module" src="../scripts/firebase/firebase.js"></script>
+    <script type="module" src="../scripts/commons/loadCommon.js"></script>
+    <script type="module" src="../scripts/product/product.js"></script>
+</body>
+
+</html>

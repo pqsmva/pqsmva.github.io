@@ -1,0 +1,389 @@
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar-nav #profile-icon {
+    width: 50px;
+    height: 50px;
+    padding: 6px;
+    color: white;
+    font-weight: 400;
+    border-radius: 50%;
+    background-color: #daa22a;
+}
+
+.login {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.login a {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.login i {
+    font-size: 30px;
+    color: #000;
+}
+
+.login button {
+    width: 30px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    justify-content: flex-end;
+    gap: 5px;
+    transition-duration: 200ms;
+}
+
+.login button span {
+    font-size: 16px;
+}
+
+.login button:hover {
+    width: 90px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-logo a {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+
+.navbar-menu {
+    display: flex;
+    align-items: center;
+
+}
+
+.search-bar {
+    display: flex;
+    margin-right: 1rem;
+    border-bottom: 1px solid #d8d7d7;
+    border-radius: 0;
+    overflow: hidden;
+}
+
+.search-bar input {
+    padding: 0.5rem 1rem;
+    border: none;
+    font-size: 0.9rem;
+    outline: none;
+    width: 200px;
+    transition: width 0.3s ease;
+}
+
+.search-bar input:focus {
+    width: 250px;
+}
+
+.search-bar button {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-bar button:hover {
+    background-color: #dad9d9;
+}
+
+
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 10px;
+
+    a {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+}
+
+.navbar-nav a:hover {
+    cursor: pointer;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #000;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+
+
+.login-btn {
+    background-color: orange;
+    color: white;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #ecf0f1;
+    margin: 2px 0;
+    transition: 0.3s;
+}
+
+@media screen and (max-width: 1200px) {
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 67px;
+        left: 0;
+        background-color: white;
+        padding: 1rem;
+    }
+
+    
+.search-bar input:focus {
+    width: 100%;
+}
+
+
+    .navbar-menu.active {
+        display: flex;
+        z-index: 999;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-link {
+        padding: 0.5rem 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .search-bar {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
+    .navbar-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-toggle.active .bar:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+        background-color: black;
+    }
+
+    .navbar-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: black;
+    }
+
+    #profile-btn {
+        width: 70px;
+        border-radius: 100% !important;
+    }
+
+
+}
+
+button.logout {
+    width: 100px;
+    background-color: orange;
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    border: 0;
+    outline: none;
+}
+
+.hidden {
+    display: none !important;
+}
+.footer {
+    color: #333;
+    padding: 40px 0;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 0 20px;
+    min-width: 200px;
+}
+
+.footer-section h3 {
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #666;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #000;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 20px;
+    color: #666;
+}
+
+
+
+
+.copyright {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+
+
+select {
+    border: 1px solid #f3f3f3;
+    padding: 10px;
+}
+
+
+
+
+/* Toast container */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Toast notifications */
+  .toast {
+    background-color: #333;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fade-in-out 5s forwards;
+  }
+  
+  .toast.success {
+    background-color: #4CAF50;
+  }
+  
+  .toast.error {
+    background-color: #F44336;
+  }
+  
+  .toast.warning {
+    background-color: #FF9800;
+  }
+  
+  /* Animation */
+  @keyframes fade-in-out {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    10%, 90% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+  }
+  
+.login-btn.login-btn {
+    width: max-content;
+    padding:10px;
+}

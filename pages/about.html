@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - JEWEL.AZ</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .header {
+            padding: 20px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .brand {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 80px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .value-card i {
+            font-size: 40px;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .value-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .history-section {
+            background: #f8f8f8;
+        }
+
+        .history-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .history-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .history-text {
+            color: #333;
+            line-height: 1.8;
+        }
+
+        .history-text p {
+            margin-bottom: 20px;
+        }
+
+        .gold-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #D4AF37;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        .gold-button:hover {
+            background: #C4A137;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 15px 20px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+                padding: 0 20px;
+            }
+
+            .history-content {
+                grid-template-columns: 1fr;
+            }
+
+            .history-image {
+                height: 300px;
+            }
+
+            .content-section {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="../styles/common/header.css">
+</head>
+<body>
+    <header>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Crafting Timeless Beauty</h1>
+            <p>Discover the story behind Azerbaijan's premier jewelry destination</p>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Our Values</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i>💎</i>
+                <h3>Quality</h3>
+                <p>We source only the finest materials and work with skilled artisans to create exceptional pieces.</p>
+            </div>
+            <div class="value-card">
+                <i>🤝</i>
+                <h3>Trust</h3>
+                <p>Building lasting relationships with our customers through transparency and integrity.</p>
+            </div>
+            <div class="value-card">
+                <i>✨</i>
+                <h3>Innovation</h3>
+                <p>Combining traditional craftsmanship with modern design to create unique jewelry pieces.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section history-section">
+        <div class="history-content">
+            <img src="" alt="Jewelry crafting" class="history-image">
+            <div class="history-text">
+                <h2 class="section-title">Our Story</h2>
+                <p>Since our establishment, JEWEL.AZ has been at the forefront of luxury jewelry in Azerbaijan. Our journey began with a simple vision: to create exceptional jewelry that celebrates life's most precious moments.</p>
+                <p>Today, we continue to uphold our commitment to excellence, combining traditional craftsmanship with contemporary design to create timeless pieces that will be treasured for generations.</p>
+                <a href="/store" class="gold-button">Explore Our Collection</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="content-section">
+        <h2 class="section-title">Our Commitment</h2>
+        <div class="values-grid">
+            <div class="value-card">
+                <i>🌟</i>
+                <h3>Excellence</h3>
+                <p>Every piece of jewelry is crafted to meet the highest standards of quality and beauty.</p>
+            </div>
+            <div class="value-card">
+                <i>🎨</i>
+                <h3>Design</h3>
+                <p>Our designs blend timeless elegance with contemporary style for the modern customer.</p>
+            </div>
+            <div class="value-card">
+                <i>♥️</i>
+                <h3>Service</h3>
+                <p>We provide exceptional customer service to ensure your complete satisfaction.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <footer></footer>
+
+
+    <script type="module" src="../scripts/commons/loadCommon.js"></script>
+    <script type="module" src="../scripts/firebase/firebase.js"></script>
+</body>
+</html>
