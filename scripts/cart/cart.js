@@ -2,11 +2,22 @@ import { showToast } from "../commons/toaster.js"
 import { addToCart, getCart, removeFromCart } from "../firebase/firebase.js"
 
 const activeUser = JSON.parse(sessionStorage.getItem('user'))
+let cart = []
 
 const updateCart = () => {
     if (activeUser) {
         getCart(activeUser.userId).then(res => {
+            cart = res
             renderCart(res)
+
+            if (res.length == []) {
+                document.querySelector('.info span').textContent = ''
+                document.querySelector('#approve').addEventListener('click', ()=> {
+                    showToast('Səbət boşdur!', 'warning')
+                })
+            } else {
+                document.querySelector('#approve').setAttribute('href', "pay.html")
+            }
         })
     } 
 }
@@ -72,7 +83,10 @@ function renderCart(cartArray) {
 
 
         decrementButton.addEventListener('click', ()=> {
-            removeFromCart(activeUser.userId, product.id, 1).then(()=> updateCart())
+            removeFromCart(activeUser.userId, product.id, 1).then(()=> {
+                updateCart()
+            })
+
         })
 
         controlsDiv.appendChild(incrementButton);
@@ -95,8 +109,7 @@ function renderCart(cartArray) {
         removeIcon.className = 'fa-solid fa-xmark';
 
         removeButton.addEventListener('click', ()=> {
-            removeFromCart(activeUser.userId, product.id, product.quantity).then(()=> updateCart())
-        })
+            removeFromCart(activeUser.userId, product.id, product.quantity).then(()=> updateCart())})
 
         removeButton.appendChild(removeIcon);
         actionsDiv.appendChild(removeButton);

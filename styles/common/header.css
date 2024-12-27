@@ -202,8 +202,14 @@ body {
     }
 
     .navbar-nav {
+        align-items: flex-start;
         flex-direction: column;
         width: 100%;
+    }
+
+    select, .navbar-nav button, li, a {
+        width: 100% !important;
+        border-radius: 20px;
     }
 
     .nav-link {

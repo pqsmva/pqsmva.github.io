@@ -16,7 +16,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
-function getUserDocRef() {
+export function getUserDocRef() {
     const user = auth.currentUser;
     if (!user) {
         alert("Please sign in first!");
@@ -36,6 +36,7 @@ export async function fetchProducts() {
         console.error("Error fetching products:", error);
     }
 }
+
 export async function fetchCategories() {
     try {
         const productsCol = collection(db, "categories");
@@ -84,6 +85,7 @@ export async function authChanged() {
     return await onAuthStateChanged(auth, async (user) => {
         if (user) {
             console.log("User is signed in:", user);
+            sessionStorage.setItem('info-user', JSON.stringify(user.providerData))
             const userId = user.uid;
 
             const userDocRef = doc(db, "users", user.uid);
@@ -103,7 +105,7 @@ export async function authChanged() {
                     sessionStorage.setItem('user', JSON.stringify({ ...userData, userId: userId }))
                     let activeUser = { ...userData, userId: userId }
                     const [first, last] = activeUser.fullName.split(' ')
-                    const profileIcon = `${first.charAt(0)}${last.charAt(0)}`
+                    const profileIcon = `${first.toUpperCase().charAt(0)}${last.toUpperCase().charAt(0)}`
                     const loginBtn = document.querySelector('#login-btn')
                     const profileBtn = document.querySelector('#profile-btn a')
                     const profileItem = document.querySelector('#profile-btn')
@@ -119,9 +121,8 @@ export async function authChanged() {
                     console.log("No user document found.");
                 }
             } catch (error) {
-     
-                sessionStorage.removeItem('user')
-                document.querySelector('header button').classList.add('hidden')
+    
+                document.querySelector('header button')?.classList.add('hidden')
             }
         } else {
             console.log("No user is signed in.");
@@ -132,7 +133,6 @@ export async function authChanged() {
 document.addEventListener('DOMContentLoaded', () => {
     authChanged()
 })
-
 
 export const getCategories = async () => {
   try {
@@ -146,10 +146,9 @@ export const getCategories = async () => {
     return categories;
   } catch (error) {
     console.error('Error getting categories:', error);
-    return []; // Return an empty array on error
+    return []; 
   }
 };
-
 
 export async function addToCart(userId, product, quantityToAdd) {
     try {
@@ -179,6 +178,8 @@ export async function addToCart(userId, product, quantityToAdd) {
     }
 }
 
+
+
 export async function getCart(userId) {
     try {
         const userDocRef = doc(db, "users", userId);
@@ -198,6 +199,7 @@ export async function getCart(userId) {
         return [];
     }
 }
+
 
 export async function removeFromCart(userId, productId, quantityToRemove) {
     try {
@@ -271,8 +273,6 @@ export async function findProductById(productId) {
     }
 }
 
-
-
 export function logoutUser() {
     auth.signOut()
       .then(() => {
@@ -284,6 +284,48 @@ export function logoutUser() {
         console.error("Logout failed:", error.message);
         alert("Failed to logout: " + error.message);
       });
+  }
+
+
+
+ export  async function updateUser(userId= null, updatedData=null) {
+    try {
+      // Reference the user document
+      const userDocRef = doc(db, "users", userId);
+
+      console.log(userDocRef);
+      
+  
+      // Update the user document
+    //   await updateDoc(userDocRef, updatedData);
+  
+      console.log("User document updated successfully!");
+    } catch (error) {
+      console.error("Error updating user document:", error);
+    }
+  }
+
+
+
+
+
+  export async function getUserDocument(userId) {
+    try {
+      const userDocRef = doc(db, "users", userId);
+  
+      const userDocSnap = await getDoc(userDocRef);
+  
+      if (userDocSnap.exists()) {
+
+        return userDocSnap.data();
+      } else {
+        console.log("No such document!");
+        return null;
+      }
+    } catch (error) {
+      console.error("Error getting user document:", error);
+      throw error;
+    }
   }
 
 

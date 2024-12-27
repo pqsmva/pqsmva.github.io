@@ -193,16 +193,16 @@
                     <input type="text" id="zip" name="zip" required>
                 </div>
             </section>
-            <!-- <section class="order-summary">
+            <section class="order-summary">
                 <h2>Sifariş Xülasəsi</h2>
                 <ul id="order-items">
-          Sifariş məhsulları dinamik olaraq bura əlavə olunacaq 
+          Sifariş məhsulları: 
                 </ul>
                 <div class="total">
                     <span Ümumi:</span>
                     <span id="order-total"></span>
                 </div>
-            </section> -->
+            </section>
             <section class="payment-info">
                 <h2>Ödəniş Məlumatları</h2>
                 <div class="form-group">
@@ -224,36 +224,47 @@
                     </div>
                 </div>
             </section>
-            <button type="submit" class="submit-button">Sifarişi Ver</button>
+            <button id="" type="submit" class="submit-button">Sifarişi Ver</button>
         </form>
     </main>
-    <script>
+    <script type="module" src="../scripts/firebase/firebase.js"></script>
+    <script type="module">
+        import {getCart} from "../scripts/firebase/firebase.js"
+    const user = JSON.parse(sessionStorage.getItem('user'))
 
-        const params = new URLSearchParams()
+    let cartItems = null
+    let totalAmount = 0
 
-        const amount = params.get('amount')
+    getCart(user.userId).then(r => {
+        cartItems = r
+        const orderItems = document.getElementById('order-items');
+        const orderTotal = document.getElementById('order-total');
+            // Sifariş xülasəsini doldurun
+            let total = 0;
+            r.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `<span>${item.name}</span><span> ${item.quantity} x ${item.price.toFixed(2)} Azn</span>`;
+                orderItems?.appendChild(li);
+                total += item.price*item.quantity;
+                console.log(total);
+                
+            });
+
+            totalAmount = total
+            orderTotal ? orderTotal.textContent = `Azn ${total.toFixed(2)}` : ""
+
+
+
+    })
 
 
         document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('checkout-form');
-            const orderItems = document.getElementById('order-items');
-            const orderTotal = document.getElementById('order-total');
+
+    
 
 
-            const order = [
-                { name: 'Almaz Üzük', price: 999 },
-                { name: 'İncə Kolye', price: 499 }
-            ];
 
-            // Sifariş xülasəsini doldurun
-            let total = 0;
-            order.forEach(item => {
-                const li = document.createElement('li');
-                li.innerHTML = `<span>${item.name}</span><span>$${item.price}</span>`;
-                orderItems?.appendChild(li);
-                total += item.price;
-            });
-            orderTotal ? orderTotal.textContent = `$${total}` : ""
 
 
             form.addEventListener('submit', (e) => {
