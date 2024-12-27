@@ -613,6 +613,18 @@ button {
 
 
 }
+@media only screen and (max-width: 600px) {
+  #newsletter-form {
+    flex-direction: column;
+
+    button {
+      margin: 5px 0;
+      padding: 10px;
+    }
+  }
+}
+
+
 
 
 
