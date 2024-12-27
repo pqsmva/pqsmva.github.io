@@ -278,6 +278,7 @@ export function logoutUser() {
       .then(() => {
         document.querySelector('header button').classList.remove('hidden')
         showToast('Hesabdan çıxış edildi')
+        sessionStorage.removeItem('user')
         window.location.href = "homepage.html";
       })
       .catch((error) => {

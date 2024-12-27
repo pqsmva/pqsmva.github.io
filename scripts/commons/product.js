@@ -59,16 +59,6 @@ export const createProduct = (product) => {
     const productButtons = document.createElement('div');
     productButtons.classList.add('product-buttons');
 
-    // const wishlistButton = document.createElement('a');
-    // wishlistButton.href = '#';
-    // wishlistButton.classList.add('wishlist-button');
-    // wishlistButton.setAttribute('data-product_id', product.id);
-    // wishlistButton.setAttribute('aria-label', `Add “${product.name}” to the wishlist`);
-    // wishlistButton.innerHTML = '<i class="fa-regular fa-heart"></i>';
-    // wishlistButton.addEventListener('click', function (e) {
-    //     e.preventDefault();
-    //     addToWishlist(product.id);
-    // });
 
     const quickViewButton = document.createElement('a');
     quickViewButton.href = '#';
@@ -77,7 +67,37 @@ export const createProduct = (product) => {
     quickViewButton.innerHTML = '<i class="fa-regular fa-eye"></i>';
     quickViewButton.addEventListener('click', function (e) {
         e.preventDefault();
-        showQuickView(product.id);
+        e.stopPropagation()
+        document.querySelector('.quick-view').classList.remove('hidden')
+        document.querySelector('.heading button').addEventListener('click', () => {
+            document.querySelector('.quick-view').classList.add('hidden')
+        })
+        document.querySelector('.quick-view-info .name').textContent = product.name
+        document.querySelector('.quick-view-thumbnail img').setAttribute('src', product.images[0])
+        document.querySelector('.price span').textContent = product.price
+        document.querySelector('.category span').textContent = product.category
+
+        document.querySelector('.plus').addEventListener('click', ()=> {
+            document.querySelector('.quick-view input').value = Number(document.querySelector('.quick-view input').value) + 1
+        })
+        document.querySelector('.minus').addEventListener('click', ()=> {
+            if (document.querySelector('.quick-view input').value > 1) {
+                document.querySelector('.quick-view input').value = Number(document.querySelector('.quick-view input').value) - 1
+            }
+        })
+
+        document.querySelector('.quick-view .cart-btn').addEventListener('click', ()=> {
+            try {
+                if (activeUser)  {
+                    handleAddToCart(product, document.querySelector('.quick-view input').value)
+                } else {
+                    showToast('Məhsulu səbətə əlavə etmək üçün giriş edin!', "warning")
+                }
+            } catch (error) {
+                
+                
+            }
+        })
     });
 
     const addToCartButton = document.createElement('a');
@@ -91,6 +111,8 @@ export const createProduct = (product) => {
         e.stopPropagation()
         handleAddToCart(product, 1)
     });
+
+    
 
     const productName = document.createElement('span')
     productName.textContent = product.name
