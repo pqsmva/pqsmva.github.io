@@ -109,3 +109,20 @@ h2 {
 .cart-item-price {
     display: flex;
 }
+
+@media (max-width: 991px) {
+   .cart-item {
+    flex-direction: column;
+    gap: 20px;
+   }
+
+   .proceeding {
+    flex-direction: column;
+    gap: 20px;
+    height: 100px;
+    align-items: flex-start;
+
+   }
+
+
+}
