@@ -18,6 +18,11 @@ i {
 
 .product-inner {
     height: 400px;
+}  
+
+.banner-text a {
+    display: block;
+    width: 270px !important;
 }
 
 
@@ -423,3 +428,12 @@ select {
     width: max-content;
     padding: 10px;
 }
+
+
+@media (max-width: 991px) {
+    .banner-text a {
+        font-size: 22px;
+        width: 150px !important;
+        text-align: center;
+    }
+} 
