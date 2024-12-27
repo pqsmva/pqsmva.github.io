@@ -1,3 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*  {
+    font-family: Montserrat !important;
+    
+} 
+
+i {
+    font-family: "Font Awesome 6 Free" !important
+}
+
+.product-page i {
+    font-family: "Font Awesome 6 Brands" !important;
+}
+.add-to-cart-btn i {
+    font-family: "Font Awesome 6 Free" !important;
+}
+
+
+.product-inner {
+    height: 400px;
+}
+
+
 .navbar-nav {
     display: flex;
     align-items: center;
@@ -190,10 +213,10 @@ body {
         padding: 1rem;
     }
 
-    
-.search-bar input:focus {
-    width: 100%;
-}
+
+    .search-bar input:focus {
+        width: 100%;
+    }
 
 
     .navbar-menu.active {
@@ -207,7 +230,10 @@ body {
         width: 100%;
     }
 
-    select, .navbar-nav button, li, a {
+    select,
+    .navbar-nav button,
+    li,
+    a {
         width: 100% !important;
         border-radius: 20px;
     }
@@ -268,6 +294,7 @@ button.logout {
 .hidden {
     display: none !important;
 }
+
 .footer {
     color: #333;
     padding: 40px 0;
@@ -346,10 +373,10 @@ select {
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
-  
-  /* Toast notifications */
-  .toast {
+}
+
+/* Toast notifications */
+.toast {
     background-color: #333;
     color: #fff;
     padding: 15px 20px;
@@ -359,37 +386,40 @@ select {
     opacity: 0;
     transform: translateY(20px);
     animation: fade-in-out 5s forwards;
-  }
-  
-  .toast.success {
+}
+
+.toast.success {
     background-color: #4CAF50;
-  }
-  
-  .toast.error {
+}
+
+.toast.error {
     background-color: #F44336;
-  }
-  
-  .toast.warning {
+}
+
+.toast.warning {
     background-color: #FF9800;
-  }
-  
-  /* Animation */
-  @keyframes fade-in-out {
+}
+
+/* Animation */
+@keyframes fade-in-out {
     0% {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
-    10%, 90% {
-      opacity: 1;
-      transform: translateY(0);
+
+    10%,
+    90% {
+        opacity: 1;
+        transform: translateY(0);
     }
+
     100% {
-      opacity: 0;
-      transform: translateY(20px);
+        opacity: 0;
+        transform: translateY(20px);
     }
-  }
-  
+}
+
 .login-btn.login-btn {
     width: max-content;
-    padding:10px;
+    padding: 10px;
 }
